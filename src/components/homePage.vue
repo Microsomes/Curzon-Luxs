@@ -6,18 +6,24 @@
 
         <carosell></carosell>
 
-<div class="row mt-3">
-    <div class="col m-3">
+<div id="middle" class="container">
+<div class="row mt-3"><!-- start of row-->
+    <div class="col-md col-sm-12 m-3">
 
         <h2 class="text-muted pt-2" style="text-align:center;">Vision</h2>
         <p class="m-2 p-4">{{missionStatement}}</p>
         <h2 class="text-muted pt-2" style="text-align:center;">Mission</h2>
         <p class="m-2 p-4">{{missionStatementtwo}}</p>
     </div>
-    <div class="col">
+    <div class="col-md col-sm-12 m-3">
         <img width="100%" :src="placeholderurl"/>
     </div>
+</div><!-- end of row-->
 </div>
+
+      
+      <div style="" id="attractions"><!-- start of attractions-->
+
         <h2 class="text-muted" style="text-align:center;margin-bottom:30px;">Birmingham Attractions</h2>
 <div style="text-align:center;width:100%;background:none;" class="row">
     
@@ -37,8 +43,7 @@
     :position="{lat:m.lat, lng:m.lng}"
     :clickable="true"
     :draggable="false"
-     @click="openDescription"
-  />
+   />
 
     </GmapMap>
 
@@ -47,7 +52,7 @@
         </div>
     </div>
 </div>
-
+      </div><!-- end of attractions-->
 
 <footie style="position:absolute;"></footie>
 

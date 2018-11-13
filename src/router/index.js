@@ -21,11 +21,23 @@ import facilities from '../components/faciliities.vue';
 
 import careers from '../components/careers.vue';
 
+import tos from '../components/tos.vue';
+
+
+import help from '../components/help.vue';
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path:"/tos",
+      component:tos
+    },
+    {
+      path:"/help",
+      component:help
+    },
     {
       path:"/cari",
       component:careers

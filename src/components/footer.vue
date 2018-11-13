@@ -73,11 +73,11 @@
                     },
                     {
                         name:"Help",
-                        link:"/"
+                        link:"/help"
                     },
                     {
                         name:"Terms of Use",
-                        link:"/"
+                        link:"/tos"
                     },
                     {
                         name:"Site Map",
