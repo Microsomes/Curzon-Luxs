@@ -85,7 +85,7 @@
                     },
                     {
                         name:"Careers",
-                        link:"/"
+                        link:"/cari"
                     }
                 ]
             }

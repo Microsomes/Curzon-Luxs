@@ -72,6 +72,10 @@ export default{
                     link:"/reviews"
                 },
                 {
+                    name:"FACILITIES",
+                    link:"/faci"
+                },
+                {
                     name:"SIGNIN/UP",
                     link:"/signin",
                 }

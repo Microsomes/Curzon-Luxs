@@ -17,11 +17,23 @@ import reviews2 from '../components/review2.vue';
 
 import aboutus from '../components/about.vue';
 
+import facilities from '../components/faciliities.vue';
+
+import careers from '../components/careers.vue';
+
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path:"/cari",
+      component:careers
+    },
+    {
+      path:"/faci",
+      component:facilities
+    },
     {
       path:"/about",
       component:aboutus
