@@ -3,16 +3,16 @@
 <div class="jumbotron mt-3" style="background:#343A40;color:white">
     
     <div class="row footie">
-        <div class="col">
+        <div class="col-md col-sm-12">
             <h3 class="text-muted" style="text-align:center"> SOCIAL MEDIA</h3>
             <div style="text-align:center;" class="row mt-4">
-                <div  v-for="(n,i) in socialLinks" :key="i" class="col">
+                <div  v-for="(n,i) in socialLinks" :key="i" class="col-md col-sm-12 mt-3">
                    <a target="_blank" :href="n.link"> <img width="50px" :src="n.icon" alt="social link"/></a>
                 </div>
               
             </div>
         </div>
-      <div class="col">
+      <div class="col-md col-sm-12">
             <h3 class="text-muted"  style="text-align:center"> COMPANY</h3>
 
             
@@ -23,7 +23,7 @@
                 </a>
             </div>
         </div>
-        <div class="col">
+        <div class="col-md col-sm-12">
             <h3 class="text-muted" style="text-align:center">CONTACT DETAILS</h3>
           <p style="text-align:center;padding:20px;" >14 Curzon Streen<br>Birmingham<br>B4 7XG<br>01215454545</p>
         </div>

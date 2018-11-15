@@ -1,5 +1,5 @@
 <template>
-<div style="min-height:650px;background-image:url('https://firebasestorage.googleapis.com/v0/b/hotels4us-a23c7.appspot.com/o/background_image.jpg?alt=media&token=ede936f5-cb48-405c-833a-10d9883ce2a2')">
+<div style="min-height:50px;background-image:url('https://firebasestorage.googleapis.com/v0/b/hotels4us-a23c7.appspot.com/o/background_image.jpg?alt=media&token=ede936f5-cb48-405c-833a-10d9883ce2a2')">
     <navi></navi>
     <div  class="container">
         <h2 class=" display-3" style="text-align:Center;color:white">
@@ -37,7 +37,7 @@
 
 
 
-<footie style="position:absolute;bottom:0"></footie>
+<footie style=""></footie>
 
 
 </div>
