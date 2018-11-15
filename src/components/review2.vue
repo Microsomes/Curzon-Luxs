@@ -64,7 +64,7 @@ export default{
                 return;
             }
             var rating= this.$route.params.rating;
-            rating+=1;
+            rating+=2;
             var home=this;
 
             

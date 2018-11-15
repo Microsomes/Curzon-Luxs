@@ -54,7 +54,7 @@ import {auth} from './db.js';
 export default{
     data:function(){
         return {
-            title:'Curzon Luxs',
+            title:'CURZON LUXE',
             leftSideLinks:[
                 
                 {
@@ -96,7 +96,7 @@ export default{
                             })
                             home.leftSideLinks.push({
                                 name:"MY RESERVATIONS",
-                                link:"/"
+                                link:"/reci"
                             })
                         }
             }

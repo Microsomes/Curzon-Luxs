@@ -18,6 +18,8 @@
                     <p style="text-align:center">Please pick a start date</p>
                     <datePicker v-model="date" ></datePicker>
                     <em>please click the box above to pick a date</em>
+                    <input v-model="days" type="text" placeholder="0-30 days max"/>
+                    <em>Pick how many days you would like to stay 0-30</em>
                     <button @click="bookConfirm" class="btn-success">Book now</button>
                     {{orderfeedback}}
                     </div>
@@ -92,7 +94,7 @@ import footer from './footer';
             return {
                     orderfeedback:'',
                     date: new Date(2016, 9,  16),
-                    
+                    days:'',
                 processingBooking:{
                     type:"",
                     size:""
@@ -157,12 +159,21 @@ import footer from './footer';
                 var email=auth.currentUser.email;
                 var bookingdetails= this.processingBooking;
                 var timestamp= moment().format();
+                var days=this.days;
                 var home=this;
+
+                var date= this.date;
+                if(this.days.length<=0){
+                    this.orderfeedback="choose how many days you want to stay";
+                    return;
+                }
 
                 if(email!=null){
                     db.collection("bookings").doc(email).collection("orders").add({
                         bookingdetails,
-                        timestamp:timestamp
+                        timestamp:timestamp,
+                        days,
+                        bookDate:date
                     }).then(status=>{
                         home.orderfeedback="Success order was successful. You may view your reservation on the my reservations page.";
                     }).catch(err=>{

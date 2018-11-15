@@ -23,6 +23,8 @@ import careers from '../components/careers.vue';
 
 import tos from '../components/tos.vue';
 
+import myreservations from '../components/reservations.vue';
+
 
 import help from '../components/help.vue';
 
@@ -30,6 +32,10 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path:"/reci",
+      component:myreservations
+    },
     {
       path:"/tos",
       component:tos

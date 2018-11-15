@@ -68,7 +68,7 @@
                 contactDetails:"14 Curzon ST<br> Birmingham B4 7XG",
                 footerLinks:[
                     {
-                        name:"About Curson Luxs",
+                        name:"About Curzon Luxe",
                         link:"/about"
                     },
                     {
