@@ -13,8 +13,16 @@
                 <p style="text-align:center">Please book in the next 10 minutes to secure your reservation</p>
                   
                 <div v-if="isLoggedIn==true">
+                    <div class="row">
+                        <div style="border:1px solid none;text-align:center;display:flex;flex-flow:column;align-items:center;" class="col">
                     <p style="text-align:center">Please pick a start date</p>
-                    <datePicker></datePicker>
+                    <datePicker v-model="date" ></datePicker>
+                    <em>please click the box above to pick a date</em>
+                    <button @click="bookConfirm" class="btn-success">Book now</button>
+                    {{orderfeedback}}
+                    </div>
+
+                    </div>
                 </div>
                <div v-show="isLoggedIn==false"> 
                 <div class="alert alert-danger container" role="alert">
@@ -70,8 +78,9 @@
 
     import orderBooker from './orderPriceChecker';
 
-    import datePicker from './datepicker';
+import Datepicker from 'vuejs-datepicker';
 
+import moment from 'moment';
 
     
 import nav from './nav';
@@ -81,6 +90,9 @@ import footer from './footer';
     export default{
         data:function(){
             return {
+                    orderfeedback:'',
+                    date: new Date(2016, 9,  16),
+                    
                 processingBooking:{
                     type:"",
                     size:""
@@ -138,9 +150,26 @@ import footer from './footer';
             carosell:carosell,
             orderBooker:orderBooker,
             footier:footer,
-            datePicker:datePicker
+            datePicker:Datepicker
         },
         methods:{
+            bookConfirm(){
+                var email=auth.currentUser.email;
+                var bookingdetails= this.processingBooking;
+                var timestamp= moment().format();
+                var home=this;
+
+                if(email!=null){
+                    db.collection("bookings").doc(email).collection("orders").add({
+                        bookingdetails,
+                        timestamp:timestamp
+                    }).then(status=>{
+                        home.orderfeedback="Success order was successful. You may view your reservation on the my reservations page.";
+                    }).catch(err=>{
+                        home.orderfeedback="error please try again or try calling us to report the issue."
+                    })
+                }
+            },
             gotosignin(){
                 this.$router.push("/signin");
                 location.reload();
@@ -153,7 +182,7 @@ import footer from './footer';
             }
         },
         mounted(){
-                         //   var triggerBooking= document.getElementById("bookingModel").click();
+//                         var triggerBooking= document.getElementById("bookingModel").click();
 
         },
         computed:{
