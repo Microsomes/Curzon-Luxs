@@ -3,7 +3,7 @@
 
 <script>
 
-import {auth} from './db.js';
+import {authy} from './db.js';
 
 export default{
     data:function(){
@@ -11,7 +11,7 @@ export default{
 
         }
     },created(){
-        auth.signOut();
+        authy.signOut();
         this.$router.push("/");
         location.reload();
     }

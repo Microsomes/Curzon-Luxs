@@ -46,7 +46,7 @@ import nav from './nav.vue';
 import footer from './footer.vue';
 
 import {db} from './db.js';
-import {auth} from './db.js';
+import {authy} from './db.js';
 
 import moment from 'moment';
 
@@ -64,7 +64,7 @@ export default{
         
     },created(){
         var home=this;
-        auth.onAuthStateChanged(change=>{
+        authy.onAuthStateChanged(change=>{
             var email= change.email;
         if(email!=null){
             db.collection("bookings").doc(email).collection("orders").get().then(data=>{

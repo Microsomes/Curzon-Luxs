@@ -49,7 +49,7 @@
 
 <script>
 
-import {auth} from './db.js';
+import {authy} from './db.js';
 
 export default{
     data:function(){
@@ -87,7 +87,7 @@ export default{
     mounted() {
        var home=this;
         console.log("checking if user is signed in now...");
-        auth.onAuthStateChanged(sta=>{
+        authy.onAuthStateChanged(sta=>{
             if(sta!=null){
                         home.leftSideLinks.pop();
                             home.leftSideLinks.push({

@@ -27,7 +27,7 @@
                 <h2 class="ml-2">CURZON LUXE</h2>
                 <p class="ml-2">Reviews: ({{totalReviews}})</p>
                 <p class="ml-2">Average: ({{averageRating}})</p>
-                <div class="card mt-2 p-2" v-for="n in reviews">{{n.comment}} ({{n.roundDown}} stars)</div>
+                <div class="card mt-2 p-2" v-for="(n,i) in reviews" :key="i">{{n.comment}} ({{n.roundDown}} stars)</div>
             </div>
         </div>
 

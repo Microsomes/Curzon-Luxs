@@ -73,7 +73,7 @@
 
 
 
-    import {auth} from './db.js';
+    import {authy} from './db.js';
     import {db} from './db.js'
 
     import carosell from './carosel';
@@ -156,7 +156,7 @@ import footer from './footer';
         },
         methods:{
             bookConfirm(){
-                var email=auth.currentUser.email;
+                var email=authy.currentUser.email;
                 var bookingdetails= this.processingBooking;
                 var timestamp= moment().format();
                 var days=this.days;

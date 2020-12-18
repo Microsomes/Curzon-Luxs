@@ -50,7 +50,7 @@ import nav from '../components/nav';
 import footie from '../components/footer';
 
 import {db} from '../components/db.js';
-import {auth} from '../components/db.js';
+import {authy} from '../components/db.js';
 
 
 
@@ -95,7 +95,7 @@ export default{
                 case "signin":
                 console.log("singning in")
 
-                auth.signInWithEmailAndPassword(this.email,this.password).then(status=>{
+                authy.signInWithEmailAndPassword(this.email,this.password).then(status=>{
                     this.$router.push("/");
                     location.reload();
                 }).catch(err=>{
@@ -106,7 +106,7 @@ export default{
                 break;
                 case "signup":
                 console.log("singing out")
-                auth.createUserWithEmailAndPassword(this.email,this.password).then(status=>{
+                authy.createUserWithEmailAndPassword(this.email,this.password).then(status=>{
                         this.$router.push("/");
                     location.reload();
                 })
